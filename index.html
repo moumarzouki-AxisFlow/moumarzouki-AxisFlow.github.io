@@ -3,146 +3,96 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AxisFlow Engineering provides engineering solutions in compressed air systems, engines, batteries, and turnkey industrial projects across Europe, Africa, and India.">
     <title>AxisFlow Engineering</title>
-    <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        html {
-            scroll-behavior: smooth;
-        }
-        .hover-scale {
-            transition: transform 0.3s ease;
-        }
-        .hover-scale:hover {
-            transform: scale(1.05);
-        }
-        /* Custom logo color (#1A2E5A) */
-        .logo-color {
-            background-color: #1A2E5A;
-        }
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; line-height: 1.6; }
+        nav { background: #333; padding: 1em; }
+        nav a { color: white; margin: 0 1em; text-decoration: none; }
+        nav a:hover { text-decoration: underline; }
+        section { padding: 2em; max-width: 800px; margin: 0 auto; }
+        h2 { color: #333; }
+        form { display: flex; flex-direction: column; gap: 1em; }
+        form div { display: flex; flex-direction: column; }
+        form input, form textarea { padding: 0.5em; }
+        form button { padding: 0.5em 1em; background: #333; color: white; border: none; cursor: pointer; }
+        form button:hover { background: #555; }
+        .mailto { margin-top: 1em; }
+        footer { background: #f5f5f5; text-align: center; padding: 1em; font-size: 0.9em; }
     </style>
 </head>
-<body class="font-sans text-gray-800 bg-gray-100">
-    <!-- Navigation -->
-    <nav class="logo-color text-white fixed w-full z-10 shadow-lg">
-        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-            <h1 class="text-2xl font-bold">AxisFlow Engineering</h1>
-            <ul class="flex space-x-6">
-                <li><a href="#home" class="hover:text-blue-300">Home</a></li>
-                <li><a href="#about" class="hover:text-blue-300">About</a></li>
-                <li><a href="#services" class="hover:text-blue-300">Services</a></li>
-                <li><a href="#projects" class="hover:text-blue-300">Projects</a></li>
-                <li><a href="#contact" class="hover:text-blue-300">Contact</a></li>
+<body>
+    <header>
+        <h1>AxisFlow Engineering</h1>
+        <nav aria-label="Main navigation">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home">
+            <h2>Welcome to AxisFlow Engineering</h2>
+            <p>Innovative engineering solutions for a sustainable future.</p>
+            <p class="mailto"><a href="mailto:contact@axisflowengineering.com">Get in Touch</a></p>
+        </section>
+
+        <section id="about">
+            <h2>About Us</h2>
+            <p>Founded in 2025, AxisFlow Engineering offers tailored consulting services in compressed air systems, diesel and gasoline engines, battery systems, and turnkey project management. With a presence in Europe, India, and Africa, and multilingual expertise in Arabic, French, English, and German, we are committed to delivering efficiency and innovation to our clients.</p>
+        </section>
+
+        <section id="services">
+            <h2>Our Services</h2>
+            <ul>
+                <li><strong>Compressed Air Systems</strong><br>Design, implementation, and optimization of compressed air systems (10–40 bar) with technical audits and compliance support.</li>
+                <li><strong>Engine & Battery Design</strong><br>Expertise in designing and implementing diesel, gasoline engines, and battery systems for various industries.</li>
+                <li><strong>Turnkey Project Management</strong><br>End-to-end management of industrial projects, including vendor evaluation and negotiation to reduce costs by up to 15%.</li>
             </ul>
-        </div>
-    </nav>
+        </section>
 
-    <!-- Hero Section -->
-    <section id="home" class="min-h-screen flex items-center justify-center bg-gradient-to-r from-[#1A2E5A] to-blue-400 text-white">
-        <div class="container mx-auto px-4 text-center">
-            <img src="AxisFlow Engineering SRL.png" alt="AxisFlow Engineering Logo" class="mx-auto mb-4 w-48">
-            <h2 class="text-5xl font-bold mb-4">Welcome to AxisFlow Engineering</h2>
-            <p class="text-xl mb-8">Innovative engineering solutions for a sustainable future.</p>
-            <a href="#contact" class="bg-white text-[#1A2E5A] px-6 py-3 rounded-full font-semibold hover:bg-blue-100">Get in Touch</a>
-        </div>
-    </section>
+        <section id="projects">
+            <h2>Our Projects</h2>
+            <article>
+                <h3>Sustainable Energy Plant</h3>
+                <p>A modernized facility with upgraded air, electrical, and piping systems to boost efficiency and support low-impact, renewable energy operations.</p>
+            </article>
+            <article>
+                <h3>Production Line Relocation</h3>
+                <p>A full-scope turnkey project involving the dismantling, transport, and reinstallation of industrial equipment—ensuring minimal downtime, optimized layout, and improved operational efficiency in the new facility.</p>
+            </article>
+        </section>
 
-    <!-- About Section -->
-    <section id="about" class="py-16 bg-white">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center mb-8">About Us</h2>
-            <p class="text-lg text-center max-w-3xl mx-auto">
-                Founded in 2025, AxisFlow Engineering offers tailored consulting services in compressed air systems, diesel and gasoline engines, battery systems, and turnkey project management. With a presence in Europe, India, and Africa, and multilingual expertise in Arabic, French, English, and German, we are committed to delivering efficiency and innovation to our clients.
-            </p>
-        </div>
-    </section>
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <form action="send_email.php" method="POST" id="contact-form">
+                <div>
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required placeholder="Enter your name">
+                </div>
+                <div>
+                    <label for="company">Company Name</label>
+                    <input type="text" id="company" name="company" required placeholder="Enter your company name">
+                </div>
+                <div>
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required placeholder="Enter your email">
+                </div>
+                <div>
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" required placeholder="Enter your message"></textarea>
+                </div>
+                <button type="submit">Send Message</button>
+            </form>
+            <p class="mailto">Or email us directly at <a href="mailto:contact@axisflowengineering.com">contact@axisflowengineering.com</a>.</p>
+        </section>
+    </main>
 
-    <!-- Services Section -->
-    <section id="services" class="py-16 bg-gray-100">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center mb-8">Our Services</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-white p-6 rounded-lg shadow-md hover-scale">
-                    <h3 class="text-xl font-semibold mb-4">Compressed Air Systems</h3>
-                    <p>Design, implementation, and optimization of compressed air systems (10–40 bar) with technical audits and compliance support.</p>
-                </div>
-                <div class="bg-white p-6 rounded-lg shadow-md hover-scale">
-                    <h3 class="text-xl font-semibold mb-4">Engine & Battery Design</h3>
-                    <p>Expertise in designing and implementing diesel, gasoline engines, and battery systems for various industries.</p>
-                </div>
-                <div class="bg-white p-6 rounded-lg shadow-md hover-scale">
-                    <h3 class="text-xl font-semibold mb-4">Turnkey Project Management</h3>
-                    <p>End-to-end management of industrial projects, including vendor evaluation and negotiation to reduce costs by up to 15%.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="py-16 bg-white">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center mb-8">Our Projects</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class="bg-gray-100 p-6 rounded-lg shadow-md hover-scale">
-                    <h3 class="text-xl font-semibold mb-4">Sustainable Energy Plant</h3>
-                    <p>A state-of-the-art facility designed to harness renewable energy with minimal environmental impact.</p>
-                </div>
-                <div class="bg-gray-100 p-6 rounded-lg shadow-md hover-scale">
-                    <h3 class="text-xl font-semibold mb-4">Smart City Infrastructure</h3>
-                    <p>Innovative urban planning and infrastructure development for a connected, efficient city.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="py-16 logo-color text-white">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center mb-8">Contact Us</h2>
-            <div class="max-w-lg mx-auto">
-                <div class="mb-4">
-                    <label class="block text-sm font-medium mb-2" for="name">Name</label>
-                    <input class="w-full px-4 py-2 rounded-lg bg-gray-100 text-gray-800 focus:outline-none" type="text" id="name" placeholder="Your Name">
-                </div>
-                <div class="mb-4">
-                    <label class="block text-sm font-medium mb-2" for="company">Company Name</label>
-                    <input class="w-full px-4 py-2 rounded-lg bg-gray-100 text-gray-800 focus:outline-none" type="text" id="company" placeholder="Your Company Name">
-                </div>
-                <div class="mb-4">
-                    <label class="block text-sm font-medium mb-2" for="email">Email</label>
-                    <input class="w-full px-4 py-2 rounded-lg bg-gray-100 text-gray-800 focus:outline-none" type="email" id="email" placeholder="Your Email">
-                </div>
-                <div class="mb-4">
-                    <label class="block text-sm font-medium mb-2" for="message">Message</label>
-                    <textarea class="w-full px-4 py-2 rounded-lg bg-gray-100 text-gray-800 focus:outline-none" id="message" rows="5" placeholder="Your Message to AxisFlow Engineering"></textarea>
-                </div>
-                <button onclick="submitContact()" class="w-full bg-white text-[#1A2E5A] px-6 py-3 rounded-full font-semibold hover:bg-blue-100">Send Message</button>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-8">
-        <div class="container mx-auto px-4 text-center">
-            <p>© 2025 AxisFlow Engineering. All rights reserved.</p>
-        </div>
+    <footer>
+        <p>© 2025 AxisFlow Engineering. All rights reserved.</p>
     </footer>
-
-    <script>
-        function submitContact() {
-            const name = document.getElementById('name').value;
-            const company = document.getElementById('company').value;
-            const email = document.getElementById('email').value;
-            const message = document.getElementById('message').value;
-            if (name && company && email && message) {
-                alert('Thank you for your message! We will get back to you soon.');
-                document.getElementById('name').value = '';
-                document.getElementById('company').value = '';
-                document.getElementById('email').value = '';
-                document.getElementById('message').value = '';
-            } else {
-                alert('Please fill out all fields.');
-            }
-        }
-    </script>
 </body>
 </html>

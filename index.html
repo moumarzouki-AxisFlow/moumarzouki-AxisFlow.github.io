@@ -3,99 +3,113 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="AxisFlow Engineering provides engineering solutions in compressed air systems, engines, batteries, and turnkey industrial projects across Europe, Africa, and India.">
     <title>AxisFlow Engineering</title>
     <style>
-        body { font-family: Arial, sans-serif; margin: 0; padding: 0; line-height: 1.6; background-color: #f2f2f2; }
-        nav { background: #333; padding: 1em; }
-        nav a { color: white; margin: 0 1em; text-decoration: none; }
-        nav a:hover { text-decoration: underline; }
-        section { padding: 2em; max-width: 800px; margin: 0 auto; }
-        h2 { color: #333; }
-        form { display: flex; flex-direction: column; gap: 1em; }
-        form div { display: flex; flex-direction: column; }
-        form input, form textarea { padding: 0.5em; }
-        form button { padding: 0.5em 1em; background: #333; color: white; border: none; cursor: pointer; }
-        form button:hover { background: #555; }
-        .mailto { margin-top: 1em; }
-        footer { background: #f5f5f5; text-align: center; padding: 1em; font-size: 0.9em; }
+        .logo {
+            width: 300px;
+            height: auto;
+            max-width: 100%;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin-right: 10px;
+        }
+        section {
+            margin: 20px 0;
+        }
+        form div {
+            margin: 10px 0;
+        }
+        textarea {
+            width: 100%;
+            height: 100px;
+        }
     </style>
 </head>
 <body>
-    <header style="text-align: center; background-color: #ffffff; padding: 2em 1em 1em; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
-        <img src="Logo2.jpg" alt="AxisFlow Engineering SRL.png" style="max-width: 280px; height: auto;">
     <header>
-        <h1>AxisFlow Engineering</h1>
-        <nav aria-label="Main navigation">
-            <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#services">Services</a>
-            <a href="#projects">Projects</a>
-            <a href="#contact">Contact</a>
+        <img src="images/logo.png" alt="AxisFlow Engineering Logo" class="logo">
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
         </nav>
     </header>
 
-    <main>
-        <section id="home">
-            <h2>Welcome to AxisFlow Engineering</h2>
-            <p>Innovative engineering solutions for a sustainable future.</p>
-            <p class="mailto"><a href="mailto:contact@axisflowengineering.com">Get in Touch</a></p>
-        </section>
+    <section id="home">
+        <h2>Welcome to AxisFlow Engineering</h2>
+        <p>Innovative engineering solutions for a sustainable future.</p>
+        <a href="#contact">Get in Touch</a>
+    </section>
 
-        <section id="about">
-            <h2>About Us</h2>
-            <p>Founded in 2025, AxisFlow Engineering offers tailored consulting services in compressed air systems, diesel and gasoline engines, battery systems, and turnkey project management. With a presence in Europe, India, and Africa, and multilingual expertise in Arabic, French, English, and German, we are committed to delivering efficiency and innovation to our clients.</p>
-        </section>
+    <section id="about">
+        <h2>About Us</h2>
+        <p>Founded in 2025, AxisFlow Engineering offers tailored consulting services in compressed air systems, diesel and gasoline engines, battery systems, and turnkey project management. With a presence in Europe, India, and Africa, and multilingual expertise in Arabic, French, English, and German, we are committed to delivering efficiency and innovation to our clients.</p>
+    </section>
 
-        <section id="services">
-            <h2>Our Services</h2>
-            <ul>
-                <li><strong>Compressed Air Systems</strong><br>Design, implementation, and optimization of compressed air systems (10–40 bar) with technical audits and compliance support.</li>
-                <li><strong>Engine & Battery Design</strong><br>Expertise in designing and implementing diesel, gasoline engines, and battery systems for various industries.</li>
-                <li><strong>Turnkey Project Management</strong><br>End-to-end management of industrial projects, including vendor evaluation and negotiation to reduce costs by up to 15%.</li>
-            </ul>
-        </section>
+    <section id="services">
+        <h2>Our Services</h2>
+        <ul>
+            <li>
+                <strong>Compressed Air Systems</strong><br>
+                Design, implementation, and optimization of compressed air systems (10–40 bar) with technical audits and compliance support.
+            </li>
+            <li>
+                <strong>Engine & Battery Design</strong><br>
+                Expertise in designing and implementing diesel, gasoline engines, and battery systems for various industries.
+            </li>
+            <li>
+                <strong>Turnkey Project Management</strong><br>
+                End-to-end management of industrial projects, including vendor evaluation and negotiation to reduce costs by up to 15%.
+            </li>
+        </ul>
+    </section>
 
-        <section id="projects">
-            <h2>Our Projects</h2>
-            <article>
-                <h3>Sustainable Energy Plant</h3>
-                <p>A modernized facility with upgraded air, electrical, and piping systems to boost efficiency and support low-impact, renewable energy operations.</p>
-            </article>
-            <article>
-                <h3>Production Line Relocation</h3>
-                <p>A full-scope turnkey project involving the dismantling, transport, and reinstallation of industrial equipment—ensuring minimal downtime, optimized layout, and improved operational efficiency in the new facility.</p>
-            </article>
-        </section>
+    <section id="projects">
+        <h2>Our Projects</h2>
+        <ul>
+            <li>
+                <strong>Sustainable Energy Plant</strong><br>
+                A modernized facility with upgraded air, electrical, and piping systems to boost efficiency and support low-impact, renewable energy operations.
+            </li>
+            <li>
+                <strong>Production Line Relocation</strong><br>
+                A full-scope turnkey project involving the dismantling, transport, and reinstallation of industrial equipment—ensuring minimal downtime, optimized layout, and improved operational efficiency in the new facility.
+            </li>
+        </ul>
+    </section>
 
-        <section id="contact">
-            <h2>Contact Us</h2>
-            
-<form action="https://formspree.io/f/xgvzorrg" method="POST" id="contact-form">
-    <div>
-        <label for="name">Name</label>
-        <input type="text" id="name" name="name" required placeholder="Enter your name">
-    </div>
-    <div>
-        <label for="company">Company Name</label>
-        <input type="text" id="company" name="company" required placeholder="Enter your company name">
-    </div>
-    <div>
-        <label for="email">Email</label>
-        <input type="email" id="email" name="_replyto" required placeholder="Enter your email">
-    </div>
-    <div>
-        <label for="message">Message</label>
-        <textarea id="message" name="message" required placeholder="Enter your message"></textarea>
-    </div>
-    <input type="text" name="_honey" style="display:none">
-    <input type="hidden" name="_next" value="https://axisflowengineering.com/thanks.html">
-    <button type="submit">Send Message</button>
-</form>
-
-            <p class="mailto">Or email us directly at <a href="mailto:contact@axisflowengineering.com">contact@axisflowengineering.com</a>.</p>
-        </section>
-    </main>
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <form action="https://formspree.io/f/your-form-id" method="POST">
+            <div>
+                <label for="name">Name</label><br>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div>
+                <label for="company">Company Name</label><br>
+                <input type="text" id="company" name="company">
+            </div>
+            <div>
+                <label for="email">Email</label><br>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div>
+                <label for="message">Message</label><br>
+                <textarea id="message" name="message" required></textarea>
+            </div>
+            <button type="submit">Send Message</button>
+        </form>
+        <p>Or email us directly at <a href="mailto:contact@axisflowengineering.com">contact@axisflowengineering.com</a>.</p>
+    </section>
 
     <footer>
         <p>© 2025 AxisFlow Engineering. All rights reserved.</p>

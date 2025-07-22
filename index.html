@@ -85,10 +85,23 @@
             background-color: #1a2a44;
             color: white;
             text-align: center;
-            padding: 10px;
-            position: fixed;
+            padding: 20px;
             width: 100%;
-            bottom: 0;
+            margin-top: 20px;
+        }
+        footer a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        footer a:hover {
+            color: #f0a500;
+        }
+        @media (max-width: 600px) {
+            footer a {
+                display: block;
+                margin: 5px 0;
+            }
         }
     </style>
 </head>
@@ -150,11 +163,16 @@
         <p>Or email us at <a href="mailto:contact@axisflowengineering.com" style="color: #1a2a44;">contact@axisflowengineering.com</a>.</p>
     </div>
 
-    <footer style="text-align: center; padding: 20px; background-color: #f2f2f2;">
+    <footer>
         <p>© 2025 AxisFlow Engineering. All rights reserved.</p>
         <p>
             📧 <a href="mailto:contact@axisflowengineering.com">contact@axisflowengineering.com</a>
-         </p>
+        </p>
+        <nav>
+            <a href="#about">About Us</a>
+            <a href="#services">Services</a>
+            <a href="#contact">Contact</a>
+        </nav>
     </footer>
 </body>
 </html>

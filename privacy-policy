@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - AxisFlow Engineering</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0 20px;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        header, footer {
+            background-color: #1a2a44;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        header h1, footer p {
+            margin: 0;
+        }
+        h2 {
+            color: #1a2a44;
+            margin-top: 20px;
+        }
+        a {
+            color: #1a2a44;
+        }
+        a:hover {
+            color: #f0a500;
+        }
+        main {
+            padding: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>AxisFlow Engineering</h1>
+    </header>
+
+    <main>
+        <h2>Privacy Policy</h2>
+        <p>At AxisFlow Engineering, we respect your privacy and are committed to protecting your personal data. This Privacy Policy explains how we collect, use, and safeguard the information you provide when interacting with our website or services.</p>
+
+        <h2>Information We Collect</h2>
+        <ul>
+            <li>Personal details such as name, email, company, and message when you use our contact form.</li>
+            <li>Non-identifiable information through website analytics such as browser type, IP address, and page visits.</li>
+        </ul>
+
+        <h2>How We Use Your Information</h2>
+        <ul>
+            <li>To respond to inquiries and provide requested services.</li>
+            <li>To improve our website, content, and services.</li>
+            <li>To comply with legal requirements.</li>
+        </ul>
+
+        <h2>Data Sharing</h2>
+        <p>We do not sell, trade, or rent users' personal identification information to others. Information may be shared with trusted partners solely to provide requested services, under strict confidentiality.</p>
+
+        <h2>Cookies</h2>
+        <p>Our website may use cookies and similar tracking technologies to enhance user experience. You may disable cookies in your browser, but some features may not function properly.</p>
+
+        <h2>Data Security</h2>
+        <p>We implement appropriate security measures to protect your data from unauthorized access, alteration, disclosure, or destruction.</p>
+
+        <h2>Changes to this Policy</h2>
+        <p>We may update this Privacy Policy from time to time. Any changes will be posted on this page with an updated revision date.</p>
+
+        <h2>Contact Us</h2>
+        <p>If you have any questions about this Privacy Policy or our data practices, please contact us at <a href="mailto:contact@axisflowengineering.com">contact@axisflowengineering.com</a>.</p>
+
+        <p><a href="index.html">Back to Home</a></p>
+    </main>
+
+    <footer>
+        <p>© 2025 AxisFlow Engineering. All rights reserved.</p>
+    </footer>
+</body>
+</html>

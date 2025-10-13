@@ -1,16 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0">
   <channel>
-    <title>AxisFlow Engineering Updates</title>
-    <link>https://moumarzouki-AxisFlow.github.io/</link>
-    <description>News and updates from AxisFlow Engineering</description>
+    <title>AxisFlow Engineering</title>
+    <link>https://axisflowengineering.com/</link>
+    <description>Official updates from AxisFlow Engineering – providing compressor solutions, technical services, and training across Africa and the Middle East.</description>
     <language>en-us</language>
+    <lastBuildDate>Mon, 13 Oct 2025 10:00:00 +0200</lastBuildDate>
 
     <item>
       <title>Advanced 3-Day Compressor Maintenance Training</title>
-      <link>https://moumarzouki-AxisFlow.github.io/training.html</link>
-      <description>AxisFlow Engineering offers an advanced 3-day compressor maintenance training, including technician assessment and maintenance procedures.</description>
-      <pubDate>Mon, 13 Oct 2025 10:00:00 +0200</pubDate>
+      <link>https://axisflowengineering.com/training.html</link>
+      <description>AxisFlow Engineering offers an advanced 3-day compressor maintenance training program, including technician assessment, maintenance procedures, and detailed reports — enabling customers to perform maintenance independently.</description>
+      <pubDate>Mon, 13 Oct 2025 09:00:00 +0200</pubDate>
+      <guid>https://axisflowengineering.com/training.html</guid>
+    </item>
+
+    <item>
+      <title>AxisFlow Engineering at Dubai Manufacturing Exhibition 2025</title>
+      <link>https://axisflowengineering.com/events/dubai-mfg-2025.html</link>
+      <description>Visit AxisFlow Engineering, official COMPTECH partner for Africa and the Middle East, at Hall Trade Centre Arena – Stand S-F63 during Dubai Manufacturing Exhibition 2025.</description>
+      <pubDate>Mon, 6 Oct 2025 08:00:00 +0200</pubDate>
+      <guid>https://axisflowengineering.com/events/dubai-mfg-2025.html</guid>
+    </item>
+
+    <item>
+      <title>Compressor Upgrade Solutions</title>
+      <link>https://axisflowengineering.com/solutions/upgrade.html</link>
+      <description>Discover AxisFlow Engineering’s compressor upgrade solutions designed to improve efficiency, reliability, and energy performance for industrial applications.</description>
+      <pubDate>Wed, 24 Sep 2025 14:00:00 +0200</pubDate>
+      <guid>https://axisflowengineering.com/solutions/upgrade.html</guid>
     </item>
 
   </channel>

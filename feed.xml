@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>AxisFlow Engineering Updates</title>
+    <link>https://moumarzouki-AxisFlow.github.io/</link>
+    <description>News and updates from AxisFlow Engineering</description>
+    <language>en-us</language>
+
+    <item>
+      <title>Advanced 3-Day Compressor Maintenance Training</title>
+      <link>https://moumarzouki-AxisFlow.github.io/training.html</link>
+      <description>AxisFlow Engineering offers an advanced 3-day compressor maintenance training, including technician assessment and maintenance procedures.</description>
+      <pubDate>Mon, 13 Oct 2025 10:00:00 +0200</pubDate>
+    </item>
+
+  </channel>
+</rss>

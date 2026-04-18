@@ -1,90 +1,236 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy - AxisFlow Engineering</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0 20px;
-            line-height: 1.6;
-            color: #1a2a44;
-        }
-        header {
-            background-color: #1a2a44;
-            color: white;
-            text-align: center;
-            padding: 20px;
-        }
-        header img {
-            max-width: 300px;
-            height: auto;
-        }
-        h1, h2 {
-            color: #1a2a44;
-        }
-        a {
-            color: #1a2a44;
-            text-decoration: underline;
-        }
-        footer {
-            background-color: #1a2a44;
-            color: white;
-            text-align: center;
-            padding: 20px;
-            margin-top: 20px;
-        }
-        footer a {
-            color: white;
-            text-decoration: none;
-            margin: 0 10px;
-        }
-    </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Privacy Policy – AxisFlow Engineering Sarl</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --navy: #0b1f3a;
+    --navy-mid: #142d50;
+    --steel: #1e4068;
+    --teal: #0d7a5f;
+    --teal-light: #12a07c;
+    --teal-pale: #e0f5ef;
+    --amber: #e8a020;
+    --off-white: #f5f4f0;
+    --warm-gray: #e8e5de;
+    --mid-gray: #7a7870;
+    --dark-gray: #2e2c29;
+    --serif: 'DM Serif Display', Georgia, serif;
+    --sans: 'DM Sans', system-ui, sans-serif;
+  }
+
+  html { scroll-behavior: smooth; }
+  body { font-family: var(--sans); background: #fff; color: var(--dark-gray); overflow-x: hidden; }
+
+  /* ── Nav (identical to main site) ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.1rem 3rem;
+    background: rgba(11,31,58,0.97);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+  }
+  .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+  .nav-links { display: flex; gap: 2.2rem; list-style: none; }
+  .nav-links a {
+    color: rgba(255,255,255,0.7); text-decoration: none;
+    font-size: 0.82rem; font-weight: 400; letter-spacing: 0.08em; text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: #fff; }
+  .nav-cta {
+    padding: 0.5rem 1.3rem; background: var(--teal); color: #fff;
+    font-size: 0.8rem; font-weight: 500; letter-spacing: 0.04em;
+    text-decoration: none; border-radius: 3px; transition: background 0.2s;
+  }
+  .nav-cta:hover { background: var(--teal-light); }
+
+  /* ── Page hero ── */
+  .page-hero {
+    background: var(--navy);
+    padding: 9rem 3.5rem 5rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .page-hero-bg {
+    position: absolute; inset: 0; pointer-events: none;
+    background-image:
+      linear-gradient(rgba(13,122,95,0.08) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(13,122,95,0.08) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+  .page-hero-accent {
+    position: absolute; bottom: -100px; right: -60px;
+    width: 500px; height: 500px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(13,122,95,0.15) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .page-hero-content { position: relative; z-index: 2; max-width: 700px; }
+  .hero-eyebrow {
+    font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--teal-light); font-weight: 500; margin-bottom: 1.2rem;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .hero-eyebrow::before { content: ''; display: inline-block; width: 30px; height: 1px; background: var(--teal-light); }
+  .page-hero h1 {
+    font-family: var(--serif); font-size: clamp(2rem, 4vw, 3rem);
+    color: #fff; line-height: 1.15; font-weight: 400; margin-bottom: 1rem;
+  }
+  .page-hero .effective {
+    color: rgba(255,255,255,0.4); font-size: 0.82rem; font-weight: 300; letter-spacing: 0.04em;
+  }
+
+  /* ── Content ── */
+  .content-wrap {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 5rem 2rem 6rem;
+  }
+
+  .content-wrap p {
+    color: var(--mid-gray); font-size: 0.95rem; line-height: 1.85;
+    font-weight: 300; margin-bottom: 1.2rem;
+  }
+
+  .content-wrap a {
+    color: var(--teal); text-decoration: none;
+    border-bottom: 1px solid rgba(13,122,95,0.3);
+    transition: border-color 0.2s;
+  }
+  .content-wrap a:hover { border-color: var(--teal); }
+
+  .policy-section { margin-bottom: 3rem; }
+
+  .section-eyebrow {
+    font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--teal); font-weight: 500; margin-bottom: 0.6rem;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .section-eyebrow::before { content: ''; display: inline-block; width: 20px; height: 1px; background: var(--teal); }
+
+  .policy-section h2 {
+    font-family: var(--serif); font-size: 1.4rem;
+    color: var(--navy); font-weight: 400; margin-bottom: 0.9rem; line-height: 1.3;
+  }
+
+  .divider {
+    border: none; border-top: 1px solid var(--warm-gray);
+    margin: 0 0 3rem;
+  }
+
+  /* ── Footer (identical to main site) ── */
+  footer {
+    background: var(--navy); color: rgba(255,255,255,0.5);
+    padding: 2.5rem 3.5rem;
+    display: flex; align-items: center; justify-content: space-between;
+    font-size: 0.8rem; border-top: 1px solid rgba(255,255,255,0.06);
+  }
+  footer a { color: rgba(255,255,255,0.5); text-decoration: none; transition: color 0.2s; }
+  footer a:hover { color: #fff; }
+  .footer-logo { font-family: var(--serif); font-size: 1rem; color: #fff; }
+
+  @media (max-width: 900px) {
+    nav { padding: 1rem 1.5rem; }
+    .nav-links { display: none; }
+    .page-hero { padding: 7rem 1.5rem 3.5rem; }
+    .content-wrap { padding: 3rem 1.5rem 4rem; }
+    footer { flex-direction: column; gap: 1rem; text-align: center; }
+  }
+
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+  .page-hero-content { animation: fadeUp 0.6s ease both 0.1s; }
+</style>
 </head>
 <body>
-    <header>
-        <img src="AxisFlowEngineering.PNG" alt="AxisFlow Engineering Logo">
-        <h1>Privacy Policy</h1>
-    </header>
 
-    <main>
-        <p>At <strong>AxisFlow Engineering</strong>, your privacy is important to us. This privacy policy explains how we collect, use, and protect your personal information when you visit our website or contact us.</p>
+<nav>
+  <a href="index.html" class="nav-logo">
+    <img src="AxisFlowEngineering.PNG" alt="AxisFlow Engineering" style="height: 36px; width: auto; filter: brightness(0) invert(1);"/>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html#about">About</a></li>
+    <li><a href="index.html#services">Services</a></li>
+    <li><a href="index.html#projects">Projects</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
+  </ul>
+  <a href="index.html#contact" class="nav-cta">Get in touch</a>
+</nav>
 
-        <h2>Information We Collect</h2>
-        <p>We may collect information such as your name, email address, company, and message when you submit a contact form.</p>
+<div class="page-hero">
+  <div class="page-hero-bg"></div>
+  <div class="page-hero-accent"></div>
+  <div class="page-hero-content">
+    <div class="hero-eyebrow">Legal</div>
+    <h1>Privacy Policy</h1>
+    <p class="effective">Effective date: 06 October 2025</p>
+  </div>
+</div>
 
-        <h2>How We Use Your Information</h2>
-        <p>Your information is used solely to respond to your inquiries, provide information about our services, and improve your experience with our website.</p>
+<div class="content-wrap">
 
-        <h2>Data Sharing</h2>
-        <p>We do not sell or share your personal information with third parties except as required by law or to trusted service providers who assist us in operating our website.</p>
+  <div class="policy-section">
+    <p>At <strong>AxisFlow Engineering Sarl</strong>, your privacy is important to us. This privacy policy explains how we collect, use, and protect your personal information when you visit our website or contact us.</p>
+  </div>
 
-        <h2>Cookies</h2>
-        <p>Our website may use cookies and Google Analytics to enhance user experience and track website performance. No personal data is stored through these cookies.</p>
+  <hr class="divider"/>
 
-        <h2>Security</h2>
-        <p>We take reasonable measures to protect your personal information. However, we cannot guarantee absolute security of data transmitted over the internet.</p>
+  <div class="policy-section">
+    <div class="section-eyebrow">01</div>
+    <h2>Information We Collect</h2>
+    <p>We may collect information such as your name, email address, company, and message when you submit a contact form on our website.</p>
+  </div>
 
-        <h2>Your Rights</h2>
-        <p>You have the right to access, correct, or request deletion of your personal information. To exercise these rights, please contact us at <a href="mailto:contact@axisflowengineering.com">contact@axisflowengineering.com</a>.</p>
+  <div class="policy-section">
+    <div class="section-eyebrow">02</div>
+    <h2>How We Use Your Information</h2>
+    <p>Your information is used solely to respond to your inquiries, provide information about our services, and improve your experience with our website.</p>
+  </div>
 
-        <h2>Changes to This Policy</h2>
-        <p>We may update this privacy policy from time to time. Any changes will be posted on this page with an updated effective date.</p>
+  <div class="policy-section">
+    <div class="section-eyebrow">03</div>
+    <h2>Data Sharing</h2>
+    <p>We do not sell or share your personal information with third parties, except as required by law or to trusted service providers who assist us in operating our website and delivering our services.</p>
+  </div>
 
-        <p>Effective Date: 06 October 2025</p>
-    </main>
+  <div class="policy-section">
+    <div class="section-eyebrow">04</div>
+    <h2>Cookies & Analytics</h2>
+    <p>Our website may use cookies and Google Analytics to enhance user experience and track website performance. No personal data is stored through these cookies. You may disable cookies at any time through your browser settings.</p>
+  </div>
 
-    <footer>
-        <p>© 2025 AxisFlow Engineering. All rights reserved.</p>
-        <p>📧 <a href="mailto:contact@axisflowengineering.com">contact@axisflowengineering.com</a></p>
-        <nav>
-            <a href="index.html#about">About Us</a>
-            <a href="index.html#services">Services</a>
-            <a href="index.html#contact">Contact</a>
-            <a href="privacy-policy.html">Privacy Policy</a>
-        </nav>
-    </footer>
+  <div class="policy-section">
+    <div class="section-eyebrow">05</div>
+    <h2>Security</h2>
+    <p>We take reasonable measures to protect your personal information from unauthorized access, disclosure, or loss. However, no method of transmission over the internet is completely secure, and we cannot guarantee absolute security.</p>
+  </div>
+
+  <div class="policy-section">
+    <div class="section-eyebrow">06</div>
+    <h2>Your Rights</h2>
+    <p>You have the right to access, correct, or request deletion of your personal information held by us. To exercise these rights, please contact us at <a href="mailto:contact@axisflowengineering.com">contact@axisflowengineering.com</a>.</p>
+  </div>
+
+  <div class="policy-section">
+    <div class="section-eyebrow">07</div>
+    <h2>Changes to This Policy</h2>
+    <p>We may update this privacy policy from time to time to reflect changes in our practices or applicable law. Any changes will be posted on this page with an updated effective date. We encourage you to review this page periodically.</p>
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-logo">AxisFlow Engineering Sarl</div>
+  <div>ICE: 003833106000094 &middot; &copy; 2025 AxisFlow Engineering Sarl. All rights reserved.</div>
+  <div style="display:flex; gap:1.5rem;">
+    <a href="privacy-policy.html">Privacy Policy</a>
+    <a href="mailto:contact@axisflowengineering.com">contact@axisflowengineering.com</a>
+  </div>
+</footer>
+
 </body>
 </html>

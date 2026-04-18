@@ -1,225 +1,657 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="alternate" type="application/rss+xml" title="AxisFlow Engineering RSS" href="https://axisflowengineering.com/feed.xml">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AxisFlow Engineering Sarl</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            line-height: 1.6;
-        }
-        header {
-            background-color: #1a2a44;
-            color: white;
-            text-align: center;
-            padding: 20px;
-        }
-        header img {
-            max-width: 300px;
-            height: auto;
-        }
-        nav {
-            background-color: #2e4057;
-            padding: 10px;
-        }
-        nav ul {
-            list-style-type: none;
-            padding: 0;
-            text-align: center;
-        }
-        nav ul li {
-            display: inline;
-            margin: 0 15px;
-        }
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-        }
-        nav ul li a:hover {
-            color: #f0a500;
-        }
-        .section {
-            padding: 20px;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        .section h2 {
-            color: #1a2a44;
-        }
-        .services ul, .projects ul {
-            list-style-type: none;
-            padding: 0;
-        }
-        .services li, .projects li {
-            margin-bottom: 15px;
-        }
-        form {
-            display: flex;
-            flex-direction: column;
-        }
-        form label {
-            margin-top: 10px;
-        }
-        form input, form textarea {
-            padding: 8px;
-            margin-top: 5px;
-            margin-bottom: 10px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-        form button {
-            padding: 10px;
-            background-color: #1a2a44;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-        form button:hover {
-            background-color: #2e4057;
-        }
-        footer {
-            background-color: #1a2a44;
-            color: white;
-            text-align: center;
-            padding: 20px;
-            width: 100%;
-            margin-top: 20px;
-        }
-        footer a {
-            color: white;
-            text-decoration: none;
-            margin: 0 10px;
-        }
-        footer a:hover {
-            color: #f0a500;
-        }
-        @media (max-width: 600px) {
-            footer a {
-                display: block;
-                margin: 5px 0;
-            }
-        }
-    </style>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CQVFE421W5"></script>
-    <script>
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>AxisFlow Engineering Sarl</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --navy: #142640;
+    --navy-mid: #1e3458;
+    --steel: #284570;
+    --teal: #0d7a5f;
+    --teal-light: #12a07c;
+    --teal-pale: #e0f5ef;
+    --amber: #e8a020;
+    --off-white: #f5f4f0;
+    --warm-gray: #e8e5de;
+    --mid-gray: #7a7870;
+    --dark-gray: #2e2c29;
+    --serif: 'DM Serif Display', Georgia, serif;
+    --sans: 'DM Sans', system-ui, sans-serif;
+  }
 
-          gtag('config', 'G-CQVFE421W5');
-    </script>
+  html { scroll-behavior: smooth; }
+  body { font-family: var(--sans); background: #fff; color: var(--dark-gray); overflow-x: hidden; }
 
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.1rem 3rem;
+    background: rgba(11,31,58,0.97);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+  }
+  .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+  .nav-links { display: flex; gap: 2.2rem; list-style: none; }
+  .nav-links a {
+    color: rgba(255,255,255,0.7); text-decoration: none;
+    font-size: 0.82rem; font-weight: 400; letter-spacing: 0.08em; text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: #fff; }
+  .nav-cta {
+    padding: 0.5rem 1.3rem; background: var(--teal); color: #fff;
+    font-size: 0.8rem; font-weight: 500; letter-spacing: 0.04em;
+    text-decoration: none; border-radius: 3px; transition: background 0.2s;
+  }
+  .nav-cta:hover { background: var(--teal-light); }
+  .lang-toggle { display: flex; align-items: center; gap: 8px; margin-left: 1rem; }
+  .lang-btn {
+    background: none; border: none; cursor: pointer;
+    color: rgba(255,255,255,0.5); font-size: 0.78rem; font-weight: 500;
+    letter-spacing: 0.08em; font-family: var(--sans); padding: 0;
+    transition: color 0.2s;
+  }
+  .lang-btn:hover { color: #fff; }
+  .lang-btn.active { color: #fff; }
+
+  .hero {
+    min-height: 100vh; background: var(--navy);
+    display: grid; grid-template-columns: 1fr 1fr;
+    position: relative; overflow: hidden;
+  }
+  .hero-bg-lines {
+    position: absolute; inset: 0; pointer-events: none;
+    background-image:
+      linear-gradient(rgba(13,122,95,0.08) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(13,122,95,0.08) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+  .hero-bg-accent {
+    position: absolute; bottom: -120px; right: -80px;
+    width: 600px; height: 600px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(13,122,95,0.18) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero-content {
+    display: flex; flex-direction: column; justify-content: center;
+    padding: 9rem 3rem 5rem 3.5rem; position: relative; z-index: 2;
+  }
+  .hero-eyebrow {
+    font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--teal-light); font-weight: 500; margin-bottom: 1.5rem;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .hero-eyebrow::before { content: ''; display: inline-block; width: 30px; height: 1px; background: var(--teal-light); }
+  .hero h1 {
+    font-family: var(--serif); font-size: clamp(2.4rem, 4vw, 3.6rem);
+    color: #fff; line-height: 1.12; font-weight: 400; margin-bottom: 1.6rem;
+  }
+  .hero h1 em { font-style: italic; color: var(--teal-light); }
+  .hero-desc {
+    color: rgba(255,255,255,0.6); font-size: 1rem; line-height: 1.75;
+    max-width: 440px; margin-bottom: 2.8rem; font-weight: 300;
+  }
+  .hero-actions { display: flex; gap: 1rem; align-items: center; }
+  .btn-primary {
+    padding: 0.85rem 2rem; background: var(--teal); color: #fff;
+    font-size: 0.85rem; font-weight: 500; letter-spacing: 0.03em;
+    text-decoration: none; border-radius: 3px; transition: background 0.2s;
+  }
+  .btn-primary:hover { background: var(--teal-light); }
+  .btn-ghost {
+    padding: 0.85rem 2rem; color: rgba(255,255,255,0.7);
+    font-size: 0.85rem; font-weight: 400; letter-spacing: 0.03em;
+    text-decoration: none; border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 3px; transition: all 0.2s;
+  }
+  .btn-ghost:hover { color: #fff; border-color: rgba(255,255,255,0.5); }
+  .hero-stats {
+    display: flex; flex-direction: column; justify-content: center;
+    padding: 9rem 4rem 5rem 2rem; position: relative; z-index: 2;
+    border-left: 1px solid rgba(255,255,255,0.06); gap: 3rem;
+  }
+  .stat-card { border-left: 2px solid var(--teal); padding-left: 1.4rem; }
+  .stat-num { font-family: var(--serif); font-size: 3rem; color: #fff; line-height: 1; margin-bottom: 0.3rem; }
+  .stat-num span { font-size: 1.4rem; color: var(--teal-light); }
+  .stat-label { color: rgba(255,255,255,0.5); font-size: 0.82rem; font-weight: 300; letter-spacing: 0.04em; }
+  .hero-scroll {
+    position: absolute; bottom: 2.5rem; left: 50%; transform: translateX(-50%);
+    color: rgba(255,255,255,0.3); font-size: 0.72rem; letter-spacing: 0.12em;
+    text-transform: uppercase; display: flex; flex-direction: column; align-items: center; gap: 8px; z-index: 2;
+  }
+  .scroll-line {
+    width: 1px; height: 40px;
+    background: linear-gradient(to bottom, rgba(13,122,95,0.7), transparent);
+    animation: scrollPulse 2s ease-in-out infinite;
+  }
+  @keyframes scrollPulse { 0%, 100% { opacity: 0.4; } 50% { opacity: 1; } }
+
+  section { padding: 6rem 3.5rem; }
+  .section-eyebrow {
+    font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--teal); font-weight: 500; margin-bottom: 1rem;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .section-eyebrow::before { content: ''; display: inline-block; width: 24px; height: 1px; background: var(--teal); }
+  .section-title {
+    font-family: var(--serif); font-size: clamp(2rem, 3vw, 2.8rem);
+    color: var(--navy); line-height: 1.2; font-weight: 400; margin-bottom: 1.2rem;
+  }
+  .section-sub { color: var(--mid-gray); font-size: 1rem; line-height: 1.75; font-weight: 300; max-width: 560px; }
+
+  .about { background: var(--off-white); display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+  .about-visual { position: relative; height: 420px; }
+  .about-rect-1 { position: absolute; top: 0; left: 0; width: 70%; height: 75%; background: var(--navy); border-radius: 2px; }
+  .about-rect-2 { position: absolute; bottom: 0; right: 0; width: 55%; height: 55%; background: var(--teal); border-radius: 2px; }
+  .about-badge {
+    position: absolute; bottom: 50px; left: 40px;
+    background: var(--amber); color: var(--navy);
+    padding: 1rem 1.4rem; border-radius: 3px;
+    font-weight: 500; font-size: 0.85rem; line-height: 1.4; z-index: 3;
+  }
+  .about-badge strong { display: block; font-family: var(--serif); font-size: 1.6rem; font-weight: 400; }
+  .about-text p { color: var(--mid-gray); font-size: 0.95rem; line-height: 1.8; font-weight: 300; margin-bottom: 1rem; }
+  .about-pillars { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 1.8rem; }
+  .pillar { padding: 0.4rem 1rem; border: 1px solid var(--warm-gray); border-radius: 2px; font-size: 0.78rem; letter-spacing: 0.04em; color: var(--dark-gray); font-weight: 400; }
+
+  .services { background: var(--navy); }
+  .services .section-title { color: #fff; }
+  .services .section-sub { color: rgba(255,255,255,0.5); }
+  .services .section-eyebrow { color: var(--teal-light); }
+  .services .section-eyebrow::before { background: var(--teal-light); }
+  .services-grid {
+    display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5px;
+    margin-top: 3.5rem; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.06);
+  }
+  .service-card { background: var(--navy-mid); padding: 2.4rem 2.2rem; transition: background 0.2s; }
+  .service-card:hover { background: var(--steel); }
+  .service-icon { width: 44px; height: 44px; margin-bottom: 1.4rem; display: flex; align-items: center; justify-content: center; }
+  .service-icon svg { width: 36px; height: 36px; }
+  .service-card h3 { font-family: var(--serif); font-size: 1.25rem; color: #fff; font-weight: 400; margin-bottom: 0.8rem; }
+  .service-card p { color: rgba(255,255,255,0.5); font-size: 0.88rem; line-height: 1.75; font-weight: 300; }
+  .service-tag { display: inline-block; margin-top: 1.2rem; padding: 0.3rem 0.8rem; background: rgba(13,122,95,0.2); color: var(--teal-light); font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; border-radius: 2px; }
+
+  .projects { background: #fff; }
+  .projects-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 3.5rem; }
+  .project-card { border: 1px solid var(--warm-gray); border-radius: 2px; overflow: hidden; transition: border-color 0.2s; }
+  .project-card:hover { border-color: var(--teal); }
+  .project-header { background: var(--navy); padding: 2rem; display: flex; align-items: flex-start; gap: 1rem; }
+  .project-num { font-family: var(--serif); font-size: 2.8rem; color: rgba(255,255,255,0.12); line-height: 1; flex-shrink: 0; }
+  .project-header h3 { font-family: var(--serif); font-size: 1.1rem; color: #fff; font-weight: 400; line-height: 1.3; padding-top: 0.4rem; }
+  .project-body { padding: 1.6rem 2rem; }
+  .project-body p { color: var(--mid-gray); font-size: 0.88rem; line-height: 1.75; font-weight: 300; }
+  .project-tags { display: flex; gap: 0.5rem; margin-top: 1.2rem; flex-wrap: wrap; }
+  .ptag { padding: 0.28rem 0.7rem; background: var(--teal-pale); color: var(--teal); font-size: 0.72rem; font-weight: 500; border-radius: 2px; }
+
+  .news { background: var(--off-white); }
+  .news-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; margin-top: 3.5rem; }  .news-card {
+    background: #fff; border: 1px solid var(--warm-gray);
+    border-radius: 2px; overflow: hidden;
+    display: flex; flex-direction: column;
+    transition: border-color 0.2s, transform 0.2s;
+  }
+  .news-card:hover { border-color: var(--teal); transform: translateY(-2px); }
+  .news-card-top { padding: 1.8rem 1.8rem 0; }
+  .news-meta { display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.9rem; }
+  .news-type {
+    font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase;
+    font-weight: 500; padding: 0.25rem 0.65rem; border-radius: 2px;
+  }
+  .news-type.announcement { background: rgba(13,122,95,0.12); color: var(--teal); }
+  .news-type.insight { background: rgba(232,160,32,0.12); color: #b87d10; }
+  .news-type.project { background: rgba(11,31,58,0.08); color: var(--navy-mid); }
+  .news-date { font-size: 0.75rem; color: var(--mid-gray); font-weight: 300; }
+  .news-card h3 {
+    font-family: var(--serif); font-size: 1.1rem;
+    color: var(--navy); font-weight: 400; line-height: 1.35; margin-bottom: 0.7rem;
+  }
+  .news-card p { color: var(--mid-gray); font-size: 0.85rem; line-height: 1.75; font-weight: 300; padding: 0 1.8rem 1.8rem; flex: 1; }
+  .news-card-footer {
+    padding: 1rem 1.8rem;
+    border-top: 1px solid var(--warm-gray);
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .news-read-more {
+    font-size: 0.78rem; color: var(--teal); font-weight: 500;
+    text-decoration: none; letter-spacing: 0.02em;
+    display: flex; align-items: center; gap: 4px;
+    transition: gap 0.2s;
+  }
+  .news-card:hover .news-read-more { gap: 8px; }
+
+  .contact { background: var(--off-white); display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
+  .contact-info { padding-top: 0.5rem; }
+  .contact-info p { color: var(--mid-gray); font-size: 0.95rem; line-height: 1.8; font-weight: 300; margin-bottom: 2rem; }
+  .contact-detail { display: flex; align-items: center; gap: 12px; margin-bottom: 1rem; color: var(--dark-gray); font-size: 0.9rem; }
+  .contact-detail-icon { width: 36px; height: 36px; background: var(--teal-pale); border-radius: 2px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .contact-detail-icon svg { width: 16px; height: 16px; }
+  .contact-form { background: #fff; border: 1px solid var(--warm-gray); padding: 2.5rem; border-radius: 2px; }
+  .form-group { margin-bottom: 1.3rem; }
+  .form-group label { display: block; font-size: 0.78rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--mid-gray); margin-bottom: 0.5rem; }
+  .form-group input, .form-group textarea {
+    width: 100%; border: 1px solid var(--warm-gray);
+    padding: 0.7rem 0.9rem; font-size: 0.9rem; font-family: var(--sans);
+    border-radius: 2px; color: var(--dark-gray); background: #fff;
+    transition: border-color 0.2s; outline: none;
+  }
+  .form-group input:focus, .form-group textarea:focus { border-color: var(--teal); }
+  .form-group textarea { resize: vertical; min-height: 110px; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .submit-btn {
+    width: 100%; padding: 0.9rem; background: var(--teal); color: #fff;
+    font-size: 0.88rem; font-weight: 500; letter-spacing: 0.04em;
+    border: none; border-radius: 2px; cursor: pointer; font-family: var(--sans);
+    transition: background 0.2s;
+  }
+  .submit-btn:hover { background: var(--teal-light); }
+
+  footer {
+    background: var(--navy); color: rgba(255,255,255,0.5);
+    padding: 2.5rem 3.5rem;
+    display: flex; align-items: center; justify-content: space-between;
+    font-size: 0.8rem; border-top: 1px solid rgba(255,255,255,0.06);
+  }
+  footer a { color: rgba(255,255,255,0.5); text-decoration: none; }
+  footer a:hover { color: #fff; }
+  .footer-logo { font-family: var(--serif); font-size: 1rem; color: #fff; }
+
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: translateY(0); } }
+  .hero-content > * { animation: fadeUp 0.7s ease both; }
+  .hero-content > *:nth-child(1) { animation-delay: 0.1s; }
+  .hero-content > *:nth-child(2) { animation-delay: 0.25s; }
+  .hero-content > *:nth-child(3) { animation-delay: 0.4s; }
+  .hero-content > *:nth-child(4) { animation-delay: 0.55s; }
+
+  @media (max-width: 900px) {
+    nav { padding: 1rem 1.5rem; }
+    .nav-links { display: none; }
+    .hero { grid-template-columns: 1fr; }
+    .hero-stats { display: none; }
+    .hero-content { padding: 8rem 1.5rem 4rem; }
+    section { padding: 4rem 1.5rem; }
+    .about, .contact { grid-template-columns: 1fr; gap: 2.5rem; }
+    .about-visual { height: 260px; }
+    .services-grid, .projects-grid, .news-grid { grid-template-columns: 1fr; }
+    footer { flex-direction: column; gap: 1rem; text-align: center; }
+    .form-row { grid-template-columns: 1fr; }
+  }
+</style>
 </head>
 <body>
-    <header>
-        <img src="AxisFlowEngineering.PNG" alt="AxisFlow Engineering Sarl Logo">
-    </header>
-    <nav>
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
 
-    <div class="section" id="home">
-        <h2>Welcome to AxisFlow Engineering Sarl</h2>
-        <p> 
-            AxisFlow Engineering offers independent, technology-neutral engineering solutions
-            for industry and energy, with a strong focus on energy efficiency,
-            energy storage technologies, and turnkey project delivery. 
-        </p>
-        <a href="#contact" style="color: #1a2a44; text-decoration: underline;">Get in Touch</a>
+<nav>
+  <a href="#" class="nav-logo">
+    <img src="AxisFlowEngineering.PNG" alt="AxisFlow Engineering" style="height: 36px; width: auto; filter: brightness(0) invert(1);"/>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#about" data-i18n="nav-about">About</a></li>
+    <li><a href="#services" data-i18n="nav-services">Services</a></li>
+    <li><a href="#projects" data-i18n="nav-projects">Projects</a></li>
+    <li><a href="#news" data-i18n="nav-news">News</a></li>
+    <li><a href="#contact" data-i18n="nav-contact">Contact</a></li>
+  </ul>
+  <a href="#contact" class="nav-cta" data-i18n="nav-cta">Get in touch</a>
+  <div class="lang-toggle">
+    <button onclick="setLang('en')" id="btn-en" class="lang-btn active">EN</button>
+    <span style="color: rgba(255,255,255,0.3);">|</span>
+    <button onclick="setLang('fr')" id="btn-fr" class="lang-btn">FR</button>
+  </div>
+</nav>
+
+<section class="hero" id="home">
+  <div class="hero-bg-lines"></div>
+  <div class="hero-bg-accent"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow" data-i18n="hero-eyebrow">Independent Engineering Solutions</div>
+    <h1 data-i18n="hero-h1">Energy systems built for <em>what's next</em></h1>
+    <p class="hero-desc" data-i18n="hero-desc">Technology-neutral engineering for industry and energy — from feasibility through commissioning. Specialized in energy efficiency, storage, and turnkey project delivery.</p>
+    <div class="hero-actions">
+      <a href="#services" class="btn-primary" data-i18n="btn-services">Explore services</a>
+      <a href="#about" class="btn-ghost" data-i18n="btn-about">About us</a>
     </div>
-    <div class="section" id="about">
-        <h2>About Us</h2>
-        <p>
-            AxisFlow Engineering Sarl delivers turnkey and advisory engineering solutions
-            for industrial and energy applications.
-            Our expertise covers <strong>energy efficiency</strong>,
-            <strong>energy storage technologies</strong>, and
-            <strong>industrial system integration</strong>,
-            enabling reliable, low-carbon, and future-ready operations.
-        </p>
-        <p>
-            Our leadership team brings over <strong>20 years of international experience</strong>
-            in energy systems, industrial processes, and project execution,
-            combining field expertise with a pragmatic, results-driven approach.
-        </p>
+  </div>
+  <div class="hero-stats">
+    <div class="stat-card">
+      <div class="stat-num">20<span>+</span></div>
+      <div class="stat-label" data-i18n="stat-1-label">Years of international experience</div>
     </div>
-<div class="section" id="services">
-    <h2>Our Services</h2>
-    <ul class="services">
-        <li>
-            <strong>Energy Storage Technologies</strong> – Engineering, feasibility studies,
-            and system integration for industrial-scale energy storage solutions,
-            supporting renewable integration and operational resilience.
-        </li>
-        <li>
-            <strong>Compressed Air Energy Storage (CAES)</strong> – Design and optimization
-            of CAES systems for flexible, reliable, and cost-effective energy storage.
-        </li>
-        <li>
-            <strong>Energy Optimization & Audits</strong> – Technical assessments to improve
-            energy efficiency, reduce emissions, and optimize operational costs.
-        </li>
-        <li>
-            <strong>Turnkey Industrial Projects</strong> – End-to-end project delivery from
-            concept and engineering to commissioning and start-up.
-        </li>
-    </ul>
-</div>
-<div class="section" id="projects">
-    <h2>Our Projects</h2>
-    <ul class="projects">
-        <li>
-            <strong>Industrial Energy Storage Pre-Studies</strong> – Feasibility and concept
-            studies for energy storage systems integrated with industrial processes
-            and renewable energy sources.
-        </li>
-        <li>
-            <strong>CAES Pilot Concepts</strong> – Technical evaluations and preliminary designs
-            for Compressed Air Energy Storage applications in industrial and energy systems.
-        </li>
-    </ul>
-</div>
+    <div class="stat-card">
+      <div class="stat-num">4</div>
+      <div class="stat-label" data-i18n="stat-2-label">Core engineering service lines</div>
+    </div>
+  </div>
+  <div class="hero-scroll">
+    <div class="scroll-line"></div>
+    Scroll
+  </div>
+</section>
 
+<section class="about" id="about">
+  <div class="about-visual">
+    <div class="about-rect-1"></div>
+    <div class="about-rect-2"></div>
+    <div class="about-badge">
+      <strong>20+</strong>
+      Years of international<br>engineering expertise
+    </div>
+  </div>
+  <div class="about-text">
+    <div class="section-eyebrow" data-i18n="about-eyebrow">About Us</div>
+    <h2 class="section-title" data-i18n="about-title">Pragmatic expertise,<br>proven results</h2>
+    <p data-i18n="about-p1">AxisFlow Engineering Sarl delivers turnkey and advisory engineering solutions for industrial and energy applications. Our leadership brings decades of international experience in energy systems and industrial processes.</p>
+    <p data-i18n="about-p2">We combine deep field expertise with a technology-neutral approach, meaning our recommendations are always driven by what works best for your project, not vendor preference.</p>
+    <div class="about-pillars">
+      <span class="pillar">Energy Storage</span>
+      <span class="pillar">CAES Systems</span>
+      <span class="pillar">Industrial Integration</span>
+      <span class="pillar">Low-Carbon Operations</span>
+      <span class="pillar">Turnkey Delivery</span>
+    </div>
+  </div>
+</section>
 
-    <div class="section" id="contact">
-        <h2>Contact Us</h2>
-        <form action="https://formspree.io/f/xgvzorrg" method="POST">
-            <label for="name">Name</label>
-            <input type="text" id="name" name="name" required>
-            <label for="company">Company Name</label>
-            <input type="text" id="company" name="company">
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" required>
-            <label for="message">Message</label>
-            <textarea id="message" name="message" required></textarea>
-            <button type="submit">Send Message</button>
-        </form>
-        <p>Or email us at <a href="mailto:contact@axisflowengineering.com" style="color: #1a2a44;">contact@axisflowengineering.com</a>.</p>
+<section class="services" id="services">
+  <div class="section-eyebrow" data-i18n="services-eyebrow">What We Do</div>
+  <h2 class="section-title" data-i18n="services-title">Engineering services</h2>
+  <p class="section-sub" data-i18n="services-sub">From initial concept to full commissioning, we bring the technical depth to deliver reliable, future-ready energy solutions.</p>
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="service-icon">
+        <svg viewBox="0 0 36 36" fill="none"><rect x="4" y="10" width="6" height="16" rx="1" fill="#0d7a5f" opacity="0.4"/><rect x="13" y="6" width="6" height="20" rx="1" fill="#0d7a5f" opacity="0.7"/><rect x="22" y="2" width="6" height="24" rx="1" fill="#0d7a5f"/><line x1="4" y1="30" x2="32" y2="30" stroke="#0d7a5f" stroke-width="1.5" opacity="0.5"/></svg>
+      </div>
+      <h3 data-i18n="svc-1-title">Energy Storage Technologies</h3>
+      <p data-i18n="svc-1-desc">Engineering, feasibility studies, and system integration for industrial-scale energy storage solutions supporting renewable integration and operational resilience.</p>
+      <span class="service-tag" data-i18n="svc-1-tag">Feasibility · Integration</span>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">
+        <svg viewBox="0 0 36 36" fill="none"><circle cx="18" cy="18" r="11" stroke="#0d7a5f" stroke-width="1.5" opacity="0.4"/><circle cx="18" cy="18" r="6" stroke="#0d7a5f" stroke-width="1.5" opacity="0.7"/><circle cx="18" cy="18" r="2" fill="#0d7a5f"/><line x1="18" y1="4" x2="18" y2="7" stroke="#0d7a5f" stroke-width="1.5"/><line x1="18" y1="29" x2="18" y2="32" stroke="#0d7a5f" stroke-width="1.5"/><line x1="4" y1="18" x2="7" y2="18" stroke="#0d7a5f" stroke-width="1.5"/><line x1="29" y1="18" x2="32" y2="18" stroke="#0d7a5f" stroke-width="1.5"/></svg>
+      </div>
+      <h3 data-i18n="svc-2-title">Compressed Air Energy Storage</h3>
+      <p data-i18n="svc-2-desc">Design and optimization of CAES systems for flexible, reliable, and cost-effective energy storage — tailored to industrial process requirements.</p>
+      <span class="service-tag" data-i18n="svc-2-tag">Design · Optimization</span>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">
+        <svg viewBox="0 0 36 36" fill="none"><path d="M6 26 L12 18 L17 22 L23 12 L30 16" stroke="#0d7a5f" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><polyline points="26,10 30,10 30,14" stroke="#0d7a5f" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><circle cx="8" cy="28" r="2" fill="#0d7a5f" opacity="0.4"/><circle cx="16" cy="20" r="2" fill="#0d7a5f" opacity="0.6"/><circle cx="22" cy="24" r="2" fill="#0d7a5f" opacity="0.5"/></svg>
+      </div>
+      <h3 data-i18n="svc-3-title">Energy Optimization & Audits</h3>
+      <p data-i18n="svc-3-desc">Technical assessments to improve energy efficiency, reduce emissions, and optimize operational costs across industrial and energy infrastructure.</p>
+      <span class="service-tag" data-i18n="svc-3-tag">Audit · Assessment</span>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">
+        <svg viewBox="0 0 36 36" fill="none"><rect x="4" y="20" width="28" height="12" rx="1" stroke="#0d7a5f" stroke-width="1.5" opacity="0.5"/><rect x="4" y="8" width="28" height="9" rx="1" stroke="#0d7a5f" stroke-width="1.5" opacity="0.8"/><line x1="12" y1="8" x2="12" y2="20" stroke="#0d7a5f" stroke-width="1" opacity="0.4"/><line x1="24" y1="8" x2="24" y2="20" stroke="#0d7a5f" stroke-width="1" opacity="0.4"/><circle cx="8" cy="12.5" r="1.5" fill="#0d7a5f"/><circle cx="8" cy="26" r="1.5" fill="#0d7a5f" opacity="0.5"/></svg>
+      </div>
+      <h3 data-i18n="svc-4-title">Turnkey Industrial Projects</h3>
+      <p data-i18n="svc-4-desc">End-to-end project delivery from concept and engineering to commissioning and start-up. One point of accountability from first blueprint to final handover.</p>
+      <span class="service-tag" data-i18n="svc-4-tag">Concept → Commissioning</span>
+    </div>
+  </div>
+</section>
+
+<section class="projects" id="projects">
+  <div class="section-eyebrow" data-i18n="projects-eyebrow">Our Work</div>
+  <h2 class="section-title" data-i18n="projects-title">Projects & studies</h2>
+  <p class="section-sub" data-i18n="projects-sub">A selection of engineering projects, feasibility studies, and concept evaluations delivered for industrial and energy clients.</p>
+  <div class="projects-grid">
+    <div class="project-card">
+      <div class="project-header">
+        <div class="project-num">01</div>
+        <h3 data-i18n="proj-1-title">Industrial Energy Storage Pre-Studies</h3>
+      </div>
+      <div class="project-body">
+        <p data-i18n="proj-1-desc">Feasibility and concept studies for energy storage systems integrated with industrial processes and renewable energy sources. Covers technical viability, sizing, and economic assessment.</p>
+        <div class="project-tags">
+          <span class="ptag" data-i18n="proj-1-tag1">Feasibility</span>
+          <span class="ptag" data-i18n="proj-1-tag2">Renewable Integration</span>
+          <span class="ptag" data-i18n="proj-1-tag3">Storage Sizing</span>
+        </div>
+      </div>
+    </div>
+    <div class="project-card">
+      <div class="project-header">
+        <div class="project-num">02</div>
+        <h3 data-i18n="proj-2-title">CAES Pilot Concepts</h3>
+      </div>
+      <div class="project-body">
+        <p data-i18n="proj-2-desc">Technical evaluations and preliminary designs for Compressed Air Energy Storage applications in industrial and energy systems. Includes thermodynamic modeling and process integration analysis.</p>
+        <div class="project-tags">
+          <span class="ptag">CAES</span>
+          <span class="ptag" data-i18n="proj-2-tag1">Pilot Design</span>
+          <span class="ptag" data-i18n="proj-2-tag2">Thermodynamics</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="news" id="news">
+  <div class="section-eyebrow" data-i18n="news-eyebrow">Latest</div>
+  <h2 class="section-title" data-i18n="news-title">News & insights</h2>
+  <p class="section-sub" data-i18n="news-sub">Company announcements, industry perspectives, and project updates from the AxisFlow team.</p>
+  <div class="news-grid">
+
+    <!-- Card 1: Metalot — unique keys: news-1-* -->
+    <div class="news-card">
+      <div class="news-card-top">
+        <div class="news-meta">
+          <span class="news-type announcement" data-i18n="news-type-announcement">Announcement</span>
+          <span class="news-date">April 2026</span>
+        </div>
+        <h3 data-i18n="news-1-title">AxisFlow Engineering joins Metalot</h3>
+      </div>
+      <p data-i18n="news-1-desc">Morocco enters the global Iron Energy race! AxisFlow Engineering becomes the first African member of the Metal Power Community, an international network that transforms iron into clean, reusable, zero-CO₂ energy. Innovation + Sustainability = The future of energy!</p>
+      <div class="news-card-footer">
+        <a href="https://www.metalot.org/members/axisflow-engineering/" class="news-read-more" data-i18n="news-1-link">Read more →</a>
+      </div>
     </div>
 
-    <footer>
-        <p>© 2025 AxisFlow Engineering Sarl. ICE: 003833106000094 All rights reserved.</p>
-        <p>
-            📧 <a href="mailto:contact@axisflowengineering.com">contact@axisflowengineering.com</a>
-        </p>
-        <nav>
-            <a href="#about">About Us</a>
-            <a href="#services">Services</a>
-            <a href="#contact">Contact</a>
-            <a href="privacy-policy.html">Privacy Policy</a>
-        </nav>
-    </footer>
+    <!-- Card 2: TECHGEN — unique keys: news-2-* -->
+    <div class="news-card">
+      <div class="news-card-top">
+        <div class="news-meta">
+          <span class="news-type insight" data-i18n="news-type-insight">Insight</span>
+          <span class="news-date">December 2025</span>
+        </div>
+        <h3 data-i18n="news-2-title">AxisFlow Engineering signs a strategic partnership with TECHGEN</h3>
+      </div>
+      <p data-i18n="news-2-desc"></p>
+      <div class="news-card-footer">
+        <a href="https://www.linkedin.com/feed/update/urn:li:activity:7395030497350799360" class="news-read-more" data-i18n="news-2-link">Read more →</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="contact-info">
+    <div class="section-eyebrow" data-i18n="contact-eyebrow">Contact</div>
+    <h2 class="section-title" data-i18n="contact-title">Let's discuss your project</h2>
+    <p data-i18n="contact-desc">Whether you're at the feasibility stage or ready for full project execution, we'd like to understand your energy challenge and explore how we can help.</p>
+    <div class="contact-detail">
+      <div class="contact-detail-icon">
+        <svg viewBox="0 0 16 16" fill="none"><path d="M2 4l6 5 6-5" stroke="#0d7a5f" stroke-width="1.2" stroke-linecap="round"/><rect x="1" y="3" width="14" height="10" rx="1.5" stroke="#0d7a5f" stroke-width="1.2"/></svg>
+      </div>
+      <a href="mailto:contact@axisflowengineering.com" style="color: inherit; text-decoration: none;">contact@axisflowengineering.com</a>
+    </div>
+    <div class="contact-detail">
+  <div class="contact-detail-icon">
+    <svg viewBox="0 0 16 16" fill="none"><path d="M8 1.5C5.5 1.5 3.5 3.5 3.5 6c0 3.5 4.5 8.5 4.5 8.5s4.5-5 4.5-8.5c0-2.5-2-4.5-4.5-4.5z" stroke="#0d7a5f" stroke-width="1.2"/><circle cx="8" cy="6" r="1.5" stroke="#0d7a5f" stroke-width="1.2"/></svg>
+    </div>
+    Casablanca, Morocco
+  </div>
+  <div class="contact-detail">
+  <div class="contact-detail-icon">
+      <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M2 5.5h2.5v8H2v-8zm1.25-4a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5zM6 5.5h2.4v1.1h.03C8.77 5.9 9.7 5.3 11 5.3c2.3 0 2.7 1.5 2.7 3.5v4.7H11V9.3c0-.9 0-2-1.2-2s-1.4 1-1.4 2v4.2H6v-8z" fill="#0d7a5f"/>
+      </svg>
+    </div>
+    <a href="https://www.linkedin.com/company/axisflow-engineering-sarl" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">LinkedIn</a>
+  </div>
+    
+  </div>
+  <div class="contact-form">
+    <form action="mailto:contact@axisflowengineering.com" method="post" enctype="text/plain">
+      <div class="form-row">
+        <div class="form-group">
+          <label for="fname" data-i18n="label-fname">First name</label>
+          <input type="text" id="fname" name="firstname" data-i18n-ph="ph-fname" placeholder="John"/>
+        </div>
+        <div class="form-group">
+          <label for="lname" data-i18n="label-lname">Last name</label>
+          <input type="text" id="lname" name="lastname" data-i18n-ph="ph-lname" placeholder="Doe"/>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="company" data-i18n="label-company">Company</label>
+        <input type="text" id="company" name="company" data-i18n-ph="ph-company" placeholder="Your organisation"/>
+      </div>
+      <div class="form-group">
+        <label for="email" data-i18n="label-email">Email</label>
+        <input type="email" id="email" name="email" data-i18n-ph="ph-email" placeholder="you@company.com"/>
+      </div>
+      <div class="form-group">
+        <label for="message" data-i18n="label-message">Message</label>
+        <textarea id="message" name="message" data-i18n-ph="ph-message" placeholder="Describe your project or enquiry..."></textarea>
+      </div>
+      <button type="submit" class="submit-btn" data-i18n="submit-btn">Send message →</button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-logo">AxisFlow Engineering Sarl</div>
+  <div>ICE: 003833106000094 &middot; &copy; 2025 AxisFlow Engineering Sarl. All rights reserved.</div>
+  <div style="display:flex; gap:1.5rem;">
+    <a href="privacy-policy.html">Privacy Policy</a>
+    <a href="mailto:contact@axisflowengineering.com">contact@axisflowengineering.com</a>
+  </div>
+</footer>
+
+<script>
+const translations = {
+  en: {
+    'nav-about': 'About', 'nav-services': 'Services', 'nav-projects': 'Projects', 'nav-news': 'News', 'nav-contact': 'Contact',
+    'nav-cta': 'Get in touch',
+    'hero-eyebrow': 'Independent Engineering Solutions',
+    'hero-h1': 'Energy systems built for <em>what\'s next</em>',
+    'hero-desc': 'Technology-neutral engineering for industry and energy — from feasibility through commissioning. Specialized in energy efficiency, storage, and turnkey project delivery.',
+    'btn-services': 'Explore services', 'btn-about': 'About us',
+    'stat-1-label': 'Years of international experience',
+    'stat-2-label': 'Core engineering service lines',
+    'about-eyebrow': 'About Us',
+    'about-title': 'Pragmatic expertise,<br>proven results',
+    'about-p1': 'AxisFlow Engineering Sarl delivers turnkey and advisory engineering solutions for industrial and energy applications. Our leadership brings decades of international experience in energy systems and industrial processes.',
+    'about-p2': 'We combine deep field expertise with a technology-neutral approach — meaning our recommendations are always driven by what works best for your project, not vendor preference.',
+    'services-eyebrow': 'What We Do', 'services-title': 'Engineering services',
+    'services-sub': 'From initial concept to full commissioning — we bring the technical depth to deliver reliable, future-ready energy solutions.',
+    'svc-1-title': 'Energy Storage Technologies',
+    'svc-1-desc': 'Engineering, feasibility studies, and system integration for industrial-scale energy storage solutions supporting renewable integration and operational resilience.',
+    'svc-1-tag': 'Feasibility · Integration',
+    'svc-2-title': 'Compressed Air Energy Storage',
+    'svc-2-desc': 'Design and optimization of CAES systems for flexible, reliable, and cost-effective energy storage — tailored to industrial process requirements.',
+    'svc-2-tag': 'Design · Optimization',
+    'svc-3-title': 'Energy Optimization & Audits',
+    'svc-3-desc': 'Technical assessments to improve energy efficiency, reduce emissions, and optimize operational costs across industrial and energy infrastructure.',
+    'svc-3-tag': 'Audit · Assessment',
+    'svc-4-title': 'Turnkey Industrial Projects',
+    'svc-4-desc': 'End-to-end project delivery from concept and engineering to commissioning and start-up. One point of accountability from first blueprint to final handover.',
+    'svc-4-tag': 'Concept → Commissioning',
+    'projects-eyebrow': 'Our Work', 'projects-title': 'Projects & studies',
+    'projects-sub': 'A selection of engineering projects, feasibility studies, and concept evaluations delivered for industrial and energy clients.',
+    'proj-1-title': 'Industrial Energy Storage Pre-Studies',
+    'proj-1-desc': 'Feasibility and concept studies for energy storage systems integrated with industrial processes and renewable energy sources. Covers technical viability, sizing, and economic assessment.',
+    'proj-1-tag1': 'Feasibility', 'proj-1-tag2': 'Renewable Integration', 'proj-1-tag3': 'Storage Sizing',
+    'proj-2-title': 'CAES Pilot Concepts',
+    'proj-2-desc': 'Technical evaluations and preliminary designs for Compressed Air Energy Storage applications in industrial and energy systems. Includes thermodynamic modeling and process integration analysis.',
+    'proj-2-tag1': 'Pilot Design', 'proj-2-tag2': 'Thermodynamics',
+    'news-eyebrow': 'Latest', 'news-title': 'News & insights',
+    'news-sub': 'Company announcements, industry perspectives, and project updates from the AxisFlow team.',
+    'news-type-announcement': 'Announcement', 'news-type-insight': 'Insight', 'news-type-project': 'Project update',
+    'news-1-title': 'AxisFlow Engineering joins Metalot',
+    'news-1-desc': 'Morocco enters the global Iron Energy race! AxisFlow Engineering becomes the first African member of the Metal Power Community, an international network that transforms iron into clean, reusable, zero-CO₂ energy. Innovation + Sustainability = The future of energy!',
+    'news-1-link': 'Read more →',
+    'news-2-title': 'AxisFlow Engineering signs a strategic partnership with TECHGEN',
+    'news-2-desc': '',
+    'news-2-link': 'Read more →',
+    'contact-eyebrow': 'Contact', 'contact-title': "Let's discuss your project",
+    'contact-desc': "Whether you're at the feasibility stage or ready for full project execution, we'd like to understand your energy challenge and explore how we can help.",
+    'label-fname': 'First name', 'label-lname': 'Last name', 'label-company': 'Company', 'label-email': 'Email', 'label-message': 'Message',
+    'ph-fname': 'John', 'ph-lname': 'Doe', 'ph-company': 'Your organisation', 'ph-email': 'you@company.com', 'ph-message': 'Describe your project or enquiry...',
+    'submit-btn': 'Send message →',
+  },
+  fr: {
+    'nav-about': 'À propos', 'nav-services': 'Services', 'nav-projects': 'Projets', 'nav-news': 'Actualités', 'nav-contact': 'Contact',
+    'nav-cta': 'Nous contacter',
+    'hero-eyebrow': 'Solutions d\'ingénierie indépendantes',
+    'hero-h1': 'Des systèmes énergétiques conçus pour <em>demain</em>',
+    'hero-desc': 'Ingénierie neutre en technologie pour l\'industrie et l\'énergie, de la faisabilité à la mise en service. Spécialisés en efficacité énergétique, stockage et livraison clé en main.',
+    'btn-services': 'Nos services', 'btn-about': 'À propos',
+    'stat-1-label': 'Années d\'expérience internationale',
+    'stat-2-label': 'Lignes de services d\'ingénierie',
+    'about-eyebrow': 'À propos',
+    'about-title': 'Expertise pragmatique,<br>résultats prouvés',
+    'about-p1': 'AxisFlow Engineering Sarl fournit des solutions d\'ingénierie clé en main et de conseil pour les applications industrielles et énergétiques. Notre direction apporte des décennies d\'expérience internationale.',
+    'about-p2': 'Nous combinons une expertise terrain approfondie avec une approche neutre — nos recommandations sont toujours guidées par ce qui fonctionne le mieux pour votre projet.',
+    'services-eyebrow': 'Ce que nous faisons', 'services-title': 'Services d\'ingénierie',
+    'services-sub': 'Du concept initial à la mise en service complète — nous apportons la profondeur technique pour des solutions énergétiques fiables et tournées vers l\'avenir.',
+    'svc-1-title': 'Technologies de stockage d\'énergie',
+    'svc-1-desc': 'Ingénierie, études de faisabilité et intégration de systèmes pour des solutions de stockage d\'énergie à l\'échelle industrielle, soutenant l\'intégration des renouvelables.',
+    'svc-1-tag': 'Faisabilité · Intégration',
+    'svc-2-title': 'Stockage par air comprimé (CAES)',
+    'svc-2-desc': 'Conception et optimisation de systèmes CAES pour un stockage d\'énergie flexible, fiable et économique, adapté aux exigences des procédés industriels.',
+    'svc-2-tag': 'Conception · Optimisation',
+    'svc-3-title': 'Optimisation énergétique & Audits',
+    'svc-3-desc': 'Évaluations techniques pour améliorer l\'efficacité énergétique, réduire les émissions et optimiser les coûts opérationnels des infrastructures industrielles.',
+    'svc-3-tag': 'Audit · Évaluation',
+    'svc-4-title': 'Projets industriels clé en main',
+    'svc-4-desc': 'Livraison de projets de bout en bout, du concept à la mise en service. Un seul interlocuteur, du premier plan au dernier essai.',
+    'svc-4-tag': 'Concept → Mise en service',
+    'projects-eyebrow': 'Nos réalisations', 'projects-title': 'Projets & études',
+    'projects-sub': 'Une sélection de projets d\'ingénierie, études de faisabilité et évaluations de concepts réalisés pour des clients industriels et énergétiques.',
+    'proj-1-title': 'Pré-études de stockage d\'énergie industriel',
+    'proj-1-desc': 'Études de faisabilité et de concept pour des systèmes de stockage d\'énergie intégrés aux procédés industriels et aux sources renouvelables. Couvre la viabilité technique, le dimensionnement et l\'évaluation économique.',
+    'proj-1-tag1': 'Faisabilité', 'proj-1-tag2': 'Intégration renouvelable', 'proj-1-tag3': 'Dimensionnement',
+    'proj-2-title': 'Concepts pilotes CAES',
+    'proj-2-desc': 'Évaluations techniques et conceptions préliminaires pour des applications CAES dans les systèmes industriels et énergétiques. Inclut la modélisation thermodynamique et l\'analyse d\'intégration de procédés.',
+    'proj-2-tag1': 'Conception pilote', 'proj-2-tag2': 'Thermodynamique',
+    'news-eyebrow': 'Actualités', 'news-title': 'Nouvelles & perspectives',
+    'news-sub': 'Annonces, perspectives sectorielles et mises à jour de projets de l\'équipe AxisFlow.',
+    'news-type-announcement': 'Annonce', 'news-type-insight': 'Perspective', 'news-type-project': 'Mise à jour projet',
+    'news-1-title': 'AxisFlow Engineering rejoint Metalot',
+    'news-1-desc': 'Le Maroc entre dans la course mondiale à l\'Iron Energy ! AxisFlow Engineering devient le premier membre africain de la Metal Power Community, un réseau international qui transforme le fer en énergie propre, réutilisable et zéro CO₂. Innovation + Durabilité = L\'avenir énergétique !',
+    'news-1-link': 'Lire la suite →',
+    'news-2-title': 'AxisFlow Engineering signe un partenariat stratégique avec TECHGEN',
+    'news-2-desc': '',
+    'news-2-link': 'Lire la suite →',
+    'contact-eyebrow': 'Contact', 'contact-title': 'Discutons de votre projet',
+    'contact-desc': 'Que vous soyez en phase de faisabilité ou prêt pour l\'exécution complète, nous souhaitons comprendre votre défi énergétique et explorer comment nous pouvons vous aider.',
+    'label-fname': 'Prénom', 'label-lname': 'Nom', 'label-company': 'Entreprise', 'label-email': 'Email', 'label-message': 'Message',
+    'ph-fname': 'Jean', 'ph-lname': 'Dupont', 'ph-company': 'Votre organisation', 'ph-email': 'vous@entreprise.com', 'ph-message': 'Décrivez votre projet ou votre demande...',
+    'submit-btn': 'Envoyer le message →',
+  }
+};
+
+function setLang(lang) {
+  const t = translations[lang];
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (t[key] !== undefined) el.innerHTML = t[key];
+  });
+  document.querySelectorAll('[data-i18n-ph]').forEach(el => {
+    const key = el.getAttribute('data-i18n-ph');
+    if (t[key]) el.placeholder = t[key];
+  });
+  document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+  document.getElementById('btn-fr').classList.toggle('active', lang === 'fr');
+  document.documentElement.lang = lang;
+}
+</script>
 </body>
 </html>

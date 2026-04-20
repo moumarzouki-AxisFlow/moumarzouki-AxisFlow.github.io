@@ -3,7 +3,8 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>AxisFlow Engineering Sarl</title>
+<link rel="icon" type="image/png" href="favicon.png"/>
+<title>AxisFlow Engineering</title>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -308,7 +309,7 @@
   <div class="hero-content">
     <div class="hero-eyebrow" data-i18n="hero-eyebrow">Independent Engineering Solutions</div>
     <h1 data-i18n="hero-h1">Energy systems built for <em>what's next</em></h1>
-    <p class="hero-desc" data-i18n="hero-desc">Technology-neutral engineering for industry and energy — from feasibility through commissioning. Specialized in energy efficiency, storage, and turnkey project delivery.</p>
+    <p class="hero-desc" data-i18n="hero-desc">Your partner in Engineering for the energy sector and industrial sector in Africa. Specialized in energy efficiency, storage, and turnkey project delivery.</p>
     <div class="hero-actions">
       <a href="#services" class="btn-primary" data-i18n="btn-services">Explore services</a>
       <a href="#about" class="btn-ghost" data-i18n="btn-about">About us</a>
@@ -316,11 +317,11 @@
   </div>
   <div class="hero-stats">
     <div class="stat-card">
-      <div class="stat-num">20<span>+</span></div>
+      <div class="stat-num" data-target="50" data-suffix="+">0<span>+</span></div>
       <div class="stat-label" data-i18n="stat-1-label">Years of international experience</div>
     </div>
     <div class="stat-card">
-      <div class="stat-num">4</div>
+      <div class="stat-num" data-target="4" data-suffix="">0</div>
       <div class="stat-label" data-i18n="stat-2-label">Core engineering service lines</div>
     </div>
   </div>
@@ -335,7 +336,7 @@
     <div class="about-rect-1"></div>
     <div class="about-rect-2"></div>
     <div class="about-badge">
-      <strong>20+</strong>
+      <strong>50+</strong>
       Years of international<br>engineering expertise
     </div>
   </div>
@@ -343,8 +344,8 @@
     <div class="section-eyebrow" data-i18n="about-eyebrow">About Us</div>
     <h2 class="section-title" data-i18n="about-title">Pragmatic expertise,<br>proven results</h2>
     <p data-i18n="about-p1">AxisFlow Engineering Sarl delivers turnkey and advisory engineering solutions for industrial and energy applications. Our leadership brings decades of international experience in energy systems and industrial processes.</p>
-    <p data-i18n="about-p2">We combine deep field expertise with a technology-neutral approach, meaning our recommendations are always driven by what works best for your project, not vendor preference.</p>
     <div class="about-pillars">
+      <span class="pillar">Iron Energy</span>
       <span class="pillar">Energy Storage</span>
       <span class="pillar">CAES Systems</span>
       <span class="pillar">Industrial Integration</span>
@@ -357,7 +358,7 @@
 <section class="services" id="services">
   <div class="section-eyebrow" data-i18n="services-eyebrow">What We Do</div>
   <h2 class="section-title" data-i18n="services-title">Engineering services</h2>
-  <p class="section-sub" data-i18n="services-sub">From initial concept to full commissioning, we bring the technical depth to deliver reliable, future-ready energy solutions.</p>
+  <p class="section-sub" data-i18n="services-sub">Our activities are organized around three complementary pillars: Innovation & Engineering, Industrial Services & Support, and Energy & Advisory.</p>
   <div class="services-grid">
     <div class="service-card">
       <div class="service-icon">
@@ -541,33 +542,32 @@ const translations = {
     'nav-cta': 'Get in touch',
     'hero-eyebrow': 'Independent Engineering Solutions',
     'hero-h1': 'Energy systems built for <em>what\'s next</em>',
-    'hero-desc': 'Technology-neutral engineering for industry and energy — from feasibility through commissioning. Specialized in energy efficiency, storage, and turnkey project delivery.',
+    'hero-desc': 'Your partner in Engineering for the energy sector and industrial sector in Africa. Specialized in energy efficiency, storage, and turnkey project delivery.',
     'btn-services': 'Explore services', 'btn-about': 'About us',
     'stat-1-label': 'Years of international experience',
     'stat-2-label': 'Core engineering service lines',
     'about-eyebrow': 'About Us',
     'about-title': 'Pragmatic expertise,<br>proven results',
-    'about-p1': 'AxisFlow Engineering Sarl delivers turnkey and advisory engineering solutions for industrial and energy applications. Our leadership brings decades of international experience in energy systems and industrial processes.',
-    'about-p2': 'We combine deep field expertise with a technology-neutral approach — meaning our recommendations are always driven by what works best for your project, not vendor preference.',
+    'about-p1': 'AxisFlow Engineering Sarl designs and delivers integrated turnkey engineering solutions and advisory services for industrial and energy sectors. Our expertise covers energy efficiency optimization, advanced energy storage technologies, and complex system integration; providing our clients with reliable, decarbonized, and resilient operations.',
     'services-eyebrow': 'What We Do', 'services-title': 'Engineering services',
-    'services-sub': 'From initial concept to full commissioning — we bring the technical depth to deliver reliable, future-ready energy solutions.',
+    'services-sub': 'Our activities are organized around three complementary pillars: Innovation & Engineering, Industrial Services & Support, and Energy & Advisory.',
     'svc-1-title': 'Energy Storage Technologies',
-    'svc-1-desc': 'Engineering, feasibility studies, and system integration for industrial-scale energy storage solutions supporting renewable integration and operational resilience.',
+    'svc-1-desc': 'Engineering, feasibility studies, and system integration for industrial scale energy storage solutions supporting renewable energy integration and operational resilience.',
     'svc-1-tag': 'Feasibility · Integration',
     'svc-2-title': 'Compressed Air Energy Storage',
-    'svc-2-desc': 'Design and optimization of CAES systems for flexible, reliable, and cost-effective energy storage — tailored to industrial process requirements.',
+    'svc-2-desc': 'Design and optimization of CAES systems for flexible, reliable and cost-effective energy storage. Tailored to industrial process requirements.',
     'svc-2-tag': 'Design · Optimization',
     'svc-3-title': 'Energy Optimization & Audits',
-    'svc-3-desc': 'Technical assessments to improve energy efficiency, reduce emissions, and optimize operational costs across industrial and energy infrastructure.',
+    'svc-3-desc': 'Technical assessments to improve energy efficiency, reduce emissions, and optimize operating costs across industrial and energy infrastructure.',
     'svc-3-tag': 'Audit · Assessment',
     'svc-4-title': 'Turnkey Industrial Projects',
-    'svc-4-desc': 'End-to-end project delivery from concept and engineering to commissioning and start-up. One point of accountability from first blueprint to final handover.',
+    'svc-4-desc': 'End-to-end project delivery from concept and engineering to commissioning and start-up. A single point of accountability from first blueprint to final handover.',
     'svc-4-tag': 'Concept → Commissioning',
     'projects-eyebrow': 'Our Work', 'projects-title': 'Projects & studies',
-    'projects-sub': 'A selection of engineering projects, feasibility studies, and concept evaluations delivered for industrial and energy clients.',
+    'projects-sub': 'A selection of engineering projects, feasibility studies, and concept evaluations delivered for industrial and energy sector clients.',
     'proj-1-title': 'Industrial Energy Storage Pre-Studies',
-    'proj-1-desc': 'Feasibility and concept studies for energy storage systems integrated with industrial processes and renewable energy sources. Covers technical viability, sizing, and economic assessment.',
-    'proj-1-tag1': 'Feasibility', 'proj-1-tag2': 'Renewable Integration', 'proj-1-tag3': 'Storage Sizing',
+    'proj-1-desc': 'Feasibility and concept studies for energy storage systems integrated with industrial processes and renewable energy sources. Covers technical viability, sizing, Iron Energy, and economic assessment.',
+    'proj-1-tag1': 'Feasibility', 'proj-1-tag2': 'Renewable Energy Integration', 'proj-1-tag3': 'Storage Sizing',
     'proj-2-title': 'CAES Pilot Concepts',
     'proj-2-desc': 'Technical evaluations and preliminary designs for Compressed Air Energy Storage applications in industrial and energy systems. Includes thermodynamic modeling and process integration analysis.',
     'proj-2-tag1': 'Pilot Design', 'proj-2-tag2': 'Thermodynamics',
@@ -575,7 +575,7 @@ const translations = {
     'news-sub': 'Company announcements, industry perspectives, and project updates from the AxisFlow team.',
     'news-type-announcement': 'Announcement', 'news-type-insight': 'Insight', 'news-type-project': 'Project update',
     'news-1-title': 'AxisFlow Engineering joins Metalot',
-    'news-1-desc': 'Morocco enters the global Iron Energy race! AxisFlow Engineering becomes the first African member of the Metal Power Community, an international network that transforms iron into clean, reusable, zero-CO₂ energy. Innovation + Sustainability = The future of energy!',
+    'news-1-desc': 'Morocco enters the global Iron Energy race! AxisFlow Engineering becomes the first African member of the Metal Power Community, an international network that transforms green iron into clean, reusable, zero-CO₂ energy. Innovation + Sustainability = The future of energy!',
     'news-1-link': 'Read more →',
     'news-2-title': 'AxisFlow Engineering signs a strategic partnership with TECHGEN',
     'news-2-desc': '',
@@ -591,16 +591,15 @@ const translations = {
     'nav-cta': 'Nous contacter',
     'hero-eyebrow': 'Solutions d\'ingénierie indépendantes',
     'hero-h1': 'Des systèmes énergétiques conçus pour <em>demain</em>',
-    'hero-desc': 'Ingénierie neutre en technologie pour l\'industrie et l\'énergie, de la faisabilité à la mise en service. Spécialisés en efficacité énergétique, stockage et livraison clé en main.',
+    'hero-desc': 'Votre partenaire en ingénierie pour les secteurs de l\'énergie et de l\'industrie en Afrique. Spécialisés en efficacité énergétique, stockage et livraison de projets clé en main.',
     'btn-services': 'Nos services', 'btn-about': 'À propos',
     'stat-1-label': 'Années d\'expérience internationale',
     'stat-2-label': 'Lignes de services d\'ingénierie',
     'about-eyebrow': 'À propos',
     'about-title': 'Expertise pragmatique,<br>résultats prouvés',
-    'about-p1': 'AxisFlow Engineering Sarl fournit des solutions d\'ingénierie clé en main et de conseil pour les applications industrielles et énergétiques. Notre direction apporte des décennies d\'expérience internationale.',
-    'about-p2': 'Nous combinons une expertise terrain approfondie avec une approche neutre — nos recommandations sont toujours guidées par ce qui fonctionne le mieux pour votre projet.',
+    'about-p1': 'AxisFlow Engineering Sarl conçoit et fournit des solutions d\'ingénierie intégrées clés en main ainsi que des services de conseil pour les secteurs industriels et énergétiques. Notre expertise englobe l\'optimisation de l\'efficacité énergétique, les technologies avancées de stockage d\'énergie et l\'intégration de systèmes complexes, offrant à nos clients des opérations fiables, décarbonées et résilientes.',
     'services-eyebrow': 'Ce que nous faisons', 'services-title': 'Services d\'ingénierie',
-    'services-sub': 'Du concept initial à la mise en service complète — nous apportons la profondeur technique pour des solutions énergétiques fiables et tournées vers l\'avenir.',
+    'services-sub': 'Nos activités sont organisées autour de trois pôles complémentaires : Innovation & Ingénierie, Services Industriels & Support, et Énergie & Conseil.',
     'svc-1-title': 'Technologies de stockage d\'énergie',
     'svc-1-desc': 'Ingénierie, études de faisabilité et intégration de systèmes pour des solutions de stockage d\'énergie à l\'échelle industrielle, soutenant l\'intégration des renouvelables.',
     'svc-1-tag': 'Faisabilité · Intégration',
@@ -652,6 +651,28 @@ function setLang(lang) {
   document.getElementById('btn-fr').classList.toggle('active', lang === 'fr');
   document.documentElement.lang = lang;
 }
+</script>
+<script>
+  const statNums = document.querySelectorAll('.stat-num');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      const el = entry.target;
+      const target = parseInt(el.dataset.target);
+      const suffix = el.dataset.suffix || '';
+      let current = 0;
+      const step = Math.ceil(target / 60);
+      const timer = setInterval(() => {
+        current = Math.min(current + step, target);
+        el.innerHTML = `${current}<span>${suffix}</span>`;
+        if (current >= target) clearInterval(timer);
+      }, 70);
+      observer.unobserve(el);
+    });
+  }, { threshold: 0.5 });
+
+  statNums.forEach(el => observer.observe(el));
 </script>
 </body>
 </html>
